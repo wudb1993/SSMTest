@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+$(function(){
+	onlogin();
+});
+function onlogin(){
+	
+}
