@@ -9,6 +9,6 @@
 <body>
 <input type="text" id="user.userName" name="user.userName"/>
 ${user.userName}
-
+${user.age}
 </body>
 </html>

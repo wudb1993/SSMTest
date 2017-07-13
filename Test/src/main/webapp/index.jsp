@@ -20,5 +20,6 @@ function clickSubmit(){
      <input type="text" name="id" id="id" />
      <input type="submit" value="提交">
    </form>
+   <img src="imgs/1.jpg" id="ijpg" name="1jpg" />
 </body>
 </html>
