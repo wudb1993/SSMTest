@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<!-- <script type="text/javascript">
+  function testClick(){
+	  location.href='../html/NewFile.html';
+  }
+</script> -->
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS3图片层叠弹性动画DEMO演示</title>
+<title>电子相册DEMO版</title>
 
 <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="../css/demo.css" />
 <script>document.documentElement.className = 'js';</script>
 </head>
 <body>
-
+<!-- <a href="javascript:void(0);" id="testClick">来点我啊</a> -->
  <svg class="hidden">
 	<symbol id="icon-arrow" viewBox="0 0 24 24">
 		<title>arrow</title>
@@ -29,14 +36,14 @@
 	<section class="content">
 		<h2 class="content__title">_001</h2>
 		<div class="grid grid--effect-vega">
-			<a href="#" class="grid__item grid__item--c1">
+			<a href="#" id="testClick" class="grid__item grid__item--c1">
 				<div class="stack">
 					<div class="stack__deco"></div>
 					<div class="stack__deco"></div>
 					<div class="stack__deco"></div>
 					<div class="stack__deco"></div>
-					<div class="stack__figure">
-						<img class="stack__img" src="../imgs/1.png" alt="Image">
+					<div class="stack__figure">			
+                         <img class="stack__img" src="../imgs/1.png" alt="Image"> 
 					</div>
 				</div>
 				<div class="grid__item-caption">
