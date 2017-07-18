@@ -19,10 +19,11 @@ public class UserController {
 	@Resource(name="userDao")
 	private UserDao userDao;
 	
-	@RequestMapping(value="/user")
+	@RequestMapping(value="/user",method=RequestMethod.GET)
 	public ModelAndView getUserByNull(User user){
 		ModelAndView mv = new ModelAndView("NewFile");
-		
+//		User userByNull = userService.getUserByNull(user.getId());
+//		mv.addObject("user", userByNull);
 		return mv;
 		
 	}

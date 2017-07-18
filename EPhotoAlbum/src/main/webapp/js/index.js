@@ -10,18 +10,18 @@ var index ={
 
     search : function(){
 //    	location.href='../html/NewFile.html';
-    	
-//    	var jsonParams = {
+//    	
+//  	    var jsonParams = {
 //    			
-//    	}
+//    	 }
 //    	var datas = JSON.stringify(jsonParams);
     	$.ajax({
-    		url:"/EPhotoAlbum/user/cs",
+    		url:"/EPhotoAlbum/test/user.do",
     		type:'get',
     		async:false,
     		data:{'userName' : "www",
-    			'userAge' : "11",
-    			'userId' : 1
+    			'age' : "11",
+    			'id' : 1
     			},
     		dataType:'json',
     		success:function(data){
