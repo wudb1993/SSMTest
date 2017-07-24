@@ -1,5 +1,7 @@
 package com.cn.EPhotoAlbum.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,5 +18,9 @@ public class UserDao {
 		User user = sqlSessionFactory.openSession().selectOne("userMapper.userByNull",id);
 		return user;
 	}
-
+	//登录验证
+	public List<User> login(String userName){ 
+	   List<User>	userByLogin = sqlSessionFactory.openSession().selectList("userMapper.userByLogin", userName);
+	   return userByLogin;
+	}
 }

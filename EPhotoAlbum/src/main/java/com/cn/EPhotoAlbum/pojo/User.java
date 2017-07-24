@@ -1,15 +1,22 @@
 package com.cn.EPhotoAlbum.pojo;
 
+import java.util.Date;
+
 public class User {
-	private int id;
+	private int userId;
 	private String userName;
-	private String password;
-	private int age;
-	public int getId() {
-		return id;
+	private String userAge;
+	private String userQQ;
+	private String userTel;
+	private String userSex;
+	private String userPhone;
+	private String userPassword;
+	private Date userDate;
+	public int getUserId() {
+		return userId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getUserName() {
 		return userName;
@@ -17,18 +24,50 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getPassword() {
-		return password;
+	
+	public String getUserAge() {
+		return userAge;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserAge(String userAge) {
+		this.userAge = userAge;
 	}
-	public int getAge() {
-		return age;
+	public String getUserQQ() {
+		return userQQ;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setUserQQ(String userQQ) {
+		this.userQQ = userQQ;
 	}
+	public String getUserTel() {
+		return userTel;
+	}
+	public void setUserTel(String userTel) {
+		this.userTel = userTel;
+	}
+	public String getUserSex() {
+		return userSex;
+	}
+	public void setUserSex(String userSex) {
+		this.userSex = userSex;
+	}
+	public String getUserPhone() {
+		return userPhone;
+	}
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
+	}
+	public String getUserPassword() {
+		return userPassword;
+	}
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+	public Date getUserDate() {
+		return userDate;
+	}
+	public void setUserDate(Date userDate) {
+		this.userDate = userDate;
+	}
+	
 	
 	
 

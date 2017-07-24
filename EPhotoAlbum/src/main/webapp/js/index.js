@@ -18,6 +18,7 @@ var index ={
     	$.ajax({
     		url:"/EPhotoAlbum/test/user.do",
     		type:'get',
+    		cache:false,
     		async:false,
     		data:{'userName' : "www",
     			'age' : "11",
@@ -25,13 +26,14 @@ var index ={
     			},
     		dataType:'json',
     		success:function(data){
-    			alert(data);
+    			location.href='../html/photo.html';
+    			console.log("asdasdhkj")
     		}
     	});
     }
 		
 		
-} 
+}; 
 $(function (){
 	index.init();
 })

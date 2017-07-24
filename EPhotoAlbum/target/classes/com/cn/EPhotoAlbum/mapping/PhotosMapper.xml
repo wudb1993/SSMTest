@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="phtotMapper">
+   <resultMap type="com.cn.EPhotoAlbum.pojo.Photo" id="photoResultMap">
+      <id column="photoId" property="photoId"/>
+      <result column="photoName" property="photoName"/>
+      <result column="photoDate" property="photoDate"/>
+      <result column="photoCreater" property="photoCreater"/>
+      <result column="photoNum" property="photoNum" />
+      <result column="photoSrc" property="photoSrc"/>
+      <result column="albumId" property="albumId"/>
+   </resultMap>
+  <!--  <select id="selectByNull"  resultType="com.cn.EPhotoAlbum.pojo.Photo">
+     select
+     *
+     from photos
+     where 1=1
+   </select> -->
+</mapper>

@@ -4,5 +4,6 @@ import com.cn.EPhotoAlbum.pojo.User;
 
 public interface UserService {
 	public User getUserByNull(int id);
+	public String login(User user);
 
 }
