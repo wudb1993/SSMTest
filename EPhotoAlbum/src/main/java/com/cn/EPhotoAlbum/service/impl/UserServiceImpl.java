@@ -1,12 +1,15 @@
 package com.cn.EPhotoAlbum.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
 import com.cn.EPhotoAlbum.dao.UserDao;
+import com.cn.EPhotoAlbum.pojo.Album;
+import com.cn.EPhotoAlbum.pojo.AlbumAndPhoto;
 import com.cn.EPhotoAlbum.pojo.User;
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -18,18 +21,21 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 	
-	public String login(User user){
+	public User login(User user){
 		List<User> userByLogin = userDao.login(user.getUserName());
 		if(userByLogin.size()!=0){
-			if(userByLogin.get(0).getUserPassword().equals(user.getUserPassword())){
-				return "success";
-			}else{
-				return "用户名密码不匹配";
-			}
-			
+		  return userByLogin.get(0);		
 		}else{
-			return "用户不存在";
+			return null;
 		}
+	}
+	public String updatePhoto(Map<String,String> mapPhoto){
+		String photoResult = userDao.updatePhoto(mapPhoto);
+		return photoResult;
+	}
+	public List<AlbumAndPhoto> mainScreen(int userId){
+		List<AlbumAndPhoto> albumList = userDao.mainScreen(userId);
+		return albumList;
 	}
 
 }

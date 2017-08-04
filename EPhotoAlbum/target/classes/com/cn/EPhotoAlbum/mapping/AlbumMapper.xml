@@ -9,12 +9,37 @@
        <result column="albumDate" property="albumDate"/>
        <result column="albumDateNew" property="albumDateNew"/>
        <result column="userId" property="userId" />
+       
    </resultMap>
-   <select id="albumByNull" parameterType="int" resultType="com.cn.EPhotoAlbum.pojo.Album">
+   <!-- 使用resultMap映射实体类和字段之间的一一对应关系 -->
+    <resultMap type="com.cn.EPhotoAlbum.pojo.AlbumAndPhoto" id="albumPhotoMap">
+       <id column="albumId" property="albumId" />
+       <result column="albumName" property="albumName" />
+       <result column="albumCreater" property="albumCreater"/>
+       <result column="albumNum" property="albumNum"/>
+       <result column="albumDate" property="albumDate"/>
+       <result column="albumDateNew" property="albumDateNew"/>
+       <result column="userId" property="userId" />
+          <collection property="photo" ofType="com.cn.EPhotoAlbum.pojo.Photo">  
+              <id column="photoId" property="photoId"/>
+      <result column="photoName" property="photoName"/>
+      <result column="photoDate" property="photoDate"/>
+      <result column="photoCreater" property="photoCreater"/>
+      <result column="photoNum" property="photoNum" />
+      <result column="photoSrc" property="photoSrc"/>
+      <result column="albumId" property="albumId"/>
+        </collection>
+     </resultMap>
+     
+   <select id="albumByNull" parameterType="int" resultMap="albumPhotoMap">
      select
       * 
      from album
      
      where 1=1
+   </select>
+   <select id="mainScreen" parameterType="String" resultMap="albumPhotoMap">
+      select a.albumId,a.albumName,a.albumCreater,a.albumNum,a.albumDate,a.albumDateNew,a.userId,p.photoSrc from album a left join photos p on a.albumId=p.albumId where userId=#{userId}
+      
    </select>
 </mapper>

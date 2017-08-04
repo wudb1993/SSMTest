@@ -16,4 +16,10 @@
      from photos
      where 1=1
    </select> -->
+   <select id="updatePhoto" parameterType="map">
+     insert
+     into photos(photoName,photoDate,photoCreater,photoNum,photoSrc)
+     values(#{photoName},#{photoDate},#{photoCreater},#{photoNum},#{photoSrc})
+   
+   </select>
 </mapper>

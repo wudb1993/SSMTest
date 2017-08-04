@@ -10,6 +10,7 @@ public class Photo {
 	private String photoNum;
 	private String photoSrc;
 	private int albumId;
+	
 	public int getPhotoId() {
 		return photoId;
 	}

@@ -1,15 +1,32 @@
 package com.cn.EPhotoAlbum.pojo;
 
 import java.util.Date;
+import java.util.List;
+
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.cn.EPhotoAlbum.util.JsonDateSerializer;
+
 
 public class Album {
 	private int albumId;
 	private String albumName;
 	private String albumCreater;
+	@JsonSerialize(using = JsonDateSerializer.class)
 	private Date albumDate;
 	private String albumNum;
-	private String albumDateNew;
+	@JsonSerialize(using = JsonDateSerializer.class)
+	private Date albumDateNew;
 	private int userId;
+	
+	
+	
+	
+	public Date getAlbumDateNew() {
+		return albumDateNew;
+	}
+	public void setAlbumDateNew(Date albumDateNew) {
+		this.albumDateNew = albumDateNew;
+	}
 	public int getAlbumId() {
 		return albumId;
 	}
@@ -40,12 +57,7 @@ public class Album {
 	public void setAlbumNum(String albumNum) {
 		this.albumNum = albumNum;
 	}
-	public String getAlbumDateNew() {
-		return albumDateNew;
-	}
-	public void setAlbumDateNew(String albumDateNew) {
-		this.albumDateNew = albumDateNew;
-	}
+	
 	public int getUserId() {
 		return userId;
 	}
