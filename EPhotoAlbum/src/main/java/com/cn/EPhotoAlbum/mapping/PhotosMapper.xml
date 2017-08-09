@@ -22,4 +22,12 @@
      values(#{photoName},#{photoDate},#{photoCreater},#{photoNum},#{photoSrc})
    
    </select>
+   
+   <!-- 页面展示Photo -->
+   <select id="photoScreen" parameterType="String" resultType="com.cn.EPhotoAlbum.pojo.Photo">
+   
+     select *
+     from photos
+     where albumId = #{albumId}
+   </select>
 </mapper>

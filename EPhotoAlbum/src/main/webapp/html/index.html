@@ -7,11 +7,7 @@
 <!-- <script src="../gg_bd_ad_720x90.js" type="text/javascript"></script> -->
 <!-- <script src="../follow.js" type="text/javascript"></script> -->
 <script src="../js/template.js" type="text/javascript"></script>
-<!-- <script type="text/javascript">
-  function testClick(){
-	  location.href='../html/NewFile.html';
-  }
-</script> -->
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +18,7 @@
 <script>document.documentElement.className = 'js';</script>
 </head>
 <body>
-<!-- <a href="javascript:void(0);" id="testClick">来点我啊</a> -->
+<div>欢迎您：帅哥哥</div>
  <svg class="hidden">
 	<symbol id="icon-arrow" viewBox="0 0 24 24">
 		<title>arrow</title>
@@ -35,7 +31,6 @@
 </svg>
 
 <main>
-
 	<div class="message-mobile">This is a hover effect. Best viewed on desktop.</div>
 	<section  class="content">
 		 <h2 class="content__title">_008</h2>
@@ -49,7 +44,7 @@
 					<div class="stack__deco"></div>
 					<div class="stack__deco"></div>
 					<div class="stack__figure">
-						<img class="stack__img" src="<%:=list[i].photo[0].photoSrc%>" alt="Image">
+						<img id='<%:=list[i].albumId%>' onclick='index.clickPhoto(<%:=list[i].albumId%>);' class="stack__img" src="http://localhost:8090/test/<%:=list[i].photo[0].photoSrc%>" alt="Image">
 					</div>
 				</div>
 				<div class="grid__item-caption">
@@ -81,78 +76,6 @@
     	}
     });
 </script>
-		<!-- <a href="#" id='testClick' class="grid__item grid__item--c1">
-			   <div class="stack">
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__figure">
-						<img class="stack__img" src="../imgs/1.png" alt="Image">
-					</div>
-				</div>
-				<div class="grid__item-caption">
-					<h3 class="grid__item-title">anaerobic</h3>
-					<div class="column column--left">
-						<span class="column__text">Period</span>
-						<span class="column__text">Subjects</span>
-						<span class="column__text">Result</span>
-					</div>
-					<div class="column column--right">
-						<span class="column__text">2045</span>
-						<span class="column__text">133456</span>
-						<span class="column__text">Positive</span>
-					</div>
-				</div>
-			</a> -->
-			<!--  <a href="#" class="grid__item grid__item--c2">
-				<div class="stack">
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__figure">
-						<img class="stack__img" src="../imgs/2.png" alt="Image">
-					</div>
-				</div>
-				<div class="grid__item-caption">
-					<h3 class="grid__item-title">exothermic</h3>
-					<div class="column column--left">
-						<span class="column__text">Period</span>
-						<span class="column__text">Subjects</span>
-						<span class="column__text">Result</span>
-					</div>
-					<div class="column column--right">
-						<span class="column__text">2045</span>
-						<span class="column__text">133456</span>
-						<span class="column__text">Positive</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="grid__item grid__item--c3">
-				<div class="stack">
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__deco"></div>
-					<div class="stack__figure">
-						<img class="stack__img" src="../imgs/3.png" alt="Image">
-				</div>
-				</div>
-				<div class="grid__item-caption">
-					<h3 class="grid__item-title">diatomic</h3>
-					<div class="column column--left">
-						<span class="column__text">Period</span>
-						<span class="column__text">Subjects</span>
-						<span class="column__text">Result</span>
-					</div>
-					<div class="column column--right">
-						<span class="column__text">2045</span>
-						<span class="column__text">133456</span>
-						<span class="column__text">Positive</span>
-					</div>
-				</div>
-			</a>  -->
 		</div>
 	</section>
 </main>

@@ -27,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cn.EPhotoAlbum.dao.UserDao;
 import com.cn.EPhotoAlbum.pojo.Album;
 import com.cn.EPhotoAlbum.pojo.AlbumAndPhoto;
+import com.cn.EPhotoAlbum.pojo.Photo;
 import com.cn.EPhotoAlbum.pojo.User;
 import com.cn.EPhotoAlbum.service.impl.UserService;
 
@@ -113,7 +114,7 @@ public class UserController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		mapPhoto.put("photoSrc", "E:/wer/"+file.getOriginalFilename());
+		mapPhoto.put("photoSrc", file.getOriginalFilename());
 		String photoResult="";
 		try{
 			photoResult = userService.updatePhoto(mapPhoto);
@@ -125,6 +126,16 @@ public class UserController {
 		}else{
 			mv.setViewName("errorPhoto");
 		}
+		return mv;
+	}
+	
+	//
+	@RequestMapping(value="/photoScreen",method=RequestMethod.GET)
+	@ResponseBody
+	public ModelAndView photoScreen(@RequestParam(value="albumId") String albumId){
+	    ModelAndView mv = new ModelAndView();
+		List<Photo> photoList = userService.photoScreen(albumId);
+		mv.addObject("photoList",photoList);
 		return mv;
 	}
 	

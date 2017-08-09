@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.cn.EPhotoAlbum.pojo.Album;
 import com.cn.EPhotoAlbum.pojo.AlbumAndPhoto;
+import com.cn.EPhotoAlbum.pojo.Photo;
 import com.cn.EPhotoAlbum.pojo.User;
 
 public interface UserService {
@@ -16,5 +17,7 @@ public interface UserService {
 	public String updatePhoto(Map<String,String> mapPhoto);
 	//页面展示图片
 	public List<AlbumAndPhoto> mainScreen(int userId);
+	//页面展示photo
+	public List<Photo>  photoScreen(String albumId);
 
 }

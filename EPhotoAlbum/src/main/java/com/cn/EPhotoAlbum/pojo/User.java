@@ -2,6 +2,10 @@ package com.cn.EPhotoAlbum.pojo;
 
 import java.util.Date;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+import com.cn.EPhotoAlbum.util.JsonDateSerializer;
+
 public class User {
 	private int userId;
 	private String userName;
@@ -11,6 +15,7 @@ public class User {
 	private String userSex;
 	private String userPhone;
 	private String userPassword;
+	@JsonSerialize(using = JsonDateSerializer.class)
 	private Date userDate;
 	public int getUserId() {
 		return userId;

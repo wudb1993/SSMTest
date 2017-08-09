@@ -2,9 +2,14 @@ package com.cn.EPhotoAlbum.pojo;
 
 import java.util.Date;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+import com.cn.EPhotoAlbum.util.JsonDateSerializer;
+
 public class Photo {
 	private int photoId;
 	private String photoName;
+	@JsonSerialize(using = JsonDateSerializer.class)
 	private Date photoDate;
 	private String photoCreater;
 	private String photoNum;

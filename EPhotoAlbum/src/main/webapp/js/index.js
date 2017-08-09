@@ -65,23 +65,11 @@ var index ={
     				+div9+data.model.albumList[i].albumDateNew+div10
     				+div4+div4
     				+'</a>';*/
-    				
-    				
-    				/*photoHtml+='<a href="javascript:void(0);"  class="grid__item grid__item--c1"> <div class="stack"><div class="stack__deco"></div><div class="stack__deco"></div><div class="stack__deco"></div><div class="stack__deco"></div><div class="stack__figure">'
-    				
-    							+'<img class="stack__img" src="../imgs/1.png" alt="Image"></div></div><div class="grid__item-caption"><h3 class="grid__item-title">anaerobic</h3><div class="column column--left">'
-    							
-    							+'<span class="column__text">Period</span><span class="column__text">Subjects</span><span class="column__text">Result</span></div><div class="column column--right"><span class="column__text">2045</span>'
-    							
-    							+'<span class="column__text">133456</span><span class="column__text">Positive</span></div></div></a>';
-    				 
-    				*/
-    			 
+    
     				var html  = template($('#tpl').html(),{
       					list:data.model.albumList,
       				});
     				$('#divMain').html(html);
-//    				}
     			
     				(function() {
     					[].slice.call(document.querySelectorAll('.grid--effect-vega > .grid__item')).forEach(function(stackEl) {
@@ -115,31 +103,13 @@ var index ={
     						new DenebFx(stackEl);
     					});
     				})();
-//    				$.parser.parse();
     			}
     		}
     	});
     	
     },
-	clickPhoto : function(){
-		$.ajax({
-    		url:"/EPhotoAlbum/test/mianScreen.do",
-    		type:'post',
-    		cache:false,
-    		async:false,
-    		data:{
-    			},
-    		success:function(data){
-  			alert("qweqwe");
-//    			console.log("asdasdhkj")
-    		},
-    		error: function(XMLHttpRequest, textStatus, errorThrown) {
-    			 alert(XMLHttpRequest.status);
-    			 alert(XMLHttpRequest.readyState);
-    			 alert(textStatus);
-    			   }
-    			
-    	});
+	clickPhoto : function(albumId){  
+		location.href="../html/photo.html?albumId="+albumId;
 	}
 		
 		

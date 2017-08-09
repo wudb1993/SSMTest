@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cn.EPhotoAlbum.pojo.Album;
 import com.cn.EPhotoAlbum.pojo.AlbumAndPhoto;
+import com.cn.EPhotoAlbum.pojo.Photo;
 import com.cn.EPhotoAlbum.pojo.User;
 
 @Repository("userDao")
@@ -40,4 +41,9 @@ public class UserDao {
 		List<AlbumAndPhoto> albumPhoto =  sqlSessionFactory.openSession().selectList("albumMapper.mainScreen",userId+"");
 		return albumPhoto;
 	}
+	//页面展示photo
+	public List<Photo> photoScreen(String albumId){
+		List<Photo> photoList = sqlSessionFactory.openSession().selectList("phtotMapper.photoScreen", albumId);
+		return photoList;
+	} 
 }

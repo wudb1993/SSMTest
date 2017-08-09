@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.cn.EPhotoAlbum.dao.UserDao;
 import com.cn.EPhotoAlbum.pojo.Album;
 import com.cn.EPhotoAlbum.pojo.AlbumAndPhoto;
+import com.cn.EPhotoAlbum.pojo.Photo;
 import com.cn.EPhotoAlbum.pojo.User;
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -36,6 +37,12 @@ public class UserServiceImpl implements UserService {
 	public List<AlbumAndPhoto> mainScreen(int userId){
 		List<AlbumAndPhoto> albumList = userDao.mainScreen(userId);
 		return albumList;
+	}
+	
+//页面展示photo
+	public List<Photo> photoScreen(String albumId) {
+		List<Photo> photoList = userDao.photoScreen(albumId); 
+		return photoList;
 	}
 
 }
